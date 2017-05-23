@@ -220,10 +220,20 @@ header{
 	width:85%;
 	display:inline-block;
 }
-#
 
 
 
-
+.new{
+	height:70px;
+	width:30%;
+	display:inline-block;
+	border:3px solid black;
+	border-radius:100%;
+	/*background-color: black;*/
+	list-style:none;
+}
+#Sequence{
+	padding:0px;
+}
 
 
