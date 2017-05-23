@@ -8,8 +8,9 @@ var n =3
 function start (){
 
 
-colorChoice()
+
 colorSequence()
+colorChoice()
 
 
 
@@ -20,6 +21,7 @@ function colorChoice (){
 			choice = wires[i]
 			playerColoring.push(wires[i])
 			console.log(playerColoring)
+			result()
 		})
 	})
 
@@ -43,6 +45,15 @@ function randomizer(r){
 }
 
 
+function result(){
+	if(playerColoring.length === n){
+		if(coloring.join() === playerColoring.join()){
+			console.log('well done')
+		}else{
+			playerColoring = []
+		}
+	}
+}
 
 
 

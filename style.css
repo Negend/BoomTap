@@ -9,8 +9,8 @@ height:85vh;
 header{
 	height:14vh;
 	background-color: beige;
-	border:5px solid black;
-	border-bottom-color: red;
+	border-radius: 20px;
+	
 
 }
 
@@ -154,7 +154,7 @@ header{
 	width:20%;
 	background-color: red;
 	display:inline-block;
-	margin: 0 10px;
+	margin: 0 5px;
 }
 #blue{
 	background-color: blue;
@@ -200,7 +200,7 @@ header{
 	width:20%;
 	background-color: yellow;
 	display:inline-block;
-	margin: 0 10px;
+	margin: 0 5px;
 
 }
 #pink{
@@ -208,7 +208,7 @@ header{
 	width:20%;
 	background-color: pink;
 	display:inline-block;
-	margin: 0 10px;
+	margin: 0 5px;
 }
 #
 #
