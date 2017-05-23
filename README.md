@@ -41,7 +41,7 @@ A funky game of dodgeball. Similar to penalty shootout
 * top half will display half of court
 * players move within court(top half) only
 
-#Diffuse Bomb
+#Dodge Bomb
 Diffuse the bomb through easy mini games (memory puzzle or maze). Careful of your stress level though! lives are at steak
 
 ##Features
@@ -59,6 +59,20 @@ Diffuse the bomb through easy mini games (memory puzzle or maze). Careful of you
 * screen shaking or moving wire
 * colour blind mode
 * timer
+* rather than shaking screen. make the section of wiring rotate
+* lose points for clicking the wrong place
+
+##Aims
+###javascript
+* make click responsive on wires
+* click should register as success or failure
+* update on score board
+* next colour should be chosen 
+* click should register only that color as pass but others as failures
+* more colours added
+* transform rotation
+* 		 
+
 
 
 

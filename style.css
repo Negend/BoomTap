@@ -1,0 +1,112 @@
+/*CONSTANTS OF THE PAGE*/
+body{
+	background-color: red;
+}
+main{
+background-color: black;
+height:85vh;
+}
+header{
+	height:14vh;
+	background-color: beige;
+	border:5px solid black;
+	border-bottom-color: red;
+
+}
+
+/*LEFT SIDE OF PAGE*/
+
+
+#left{
+	width:49%;
+	display: inline-block;
+	text-align: center;
+	background:black;
+	height: 100%;
+	float:left;
+}
+#message{
+	background-color: beige;
+	height:100px;
+	width: 85%;
+	display:inline-block;
+	margin-bottom: 70px;
+	margin-top: 10px;
+	border-radius: 50px;	
+}
+
+#clue{
+	width:60%;
+	height:50%;
+	display:inline-block;
+	background-color: beige;
+	margin:7px;
+	border:7px;
+	border-radius: 20px;
+
+
+
+}
+#sideMenu{
+	width: 18%;
+	height:50%;
+	display:inline-block;
+	background-color: beige;
+	float:left;
+	margin:7px;
+	border-radius:20px;
+}
+
+
+/*RIGHT SIDE OF PAGE*/
+#right{
+	width:49%;
+	height:100%;
+	display: inline-block;
+	text-align: center;	
+	background-color: brown;
+	float:right;
+}
+#stats{
+	float:right;
+	border-radius:20px;
+	width:18%;
+	display:inline-block;
+	height:50%;
+	background-color: red;
+	margin:7px;
+	margin-top:80px;
+
+}
+#motherboard{
+	display:inline-block;
+	height:55%;
+	width:60%;
+	background-color: red;
+	margin:80px 5px;
+	box-shadow: 5px 5px 1em black , -5px -5px 1em black, -5px 5px 1em black, 5px -5px 1em black;
+
+
+	border-radius:100%; 
+	  /*Will provide cirle shape*/
+}
+ 
+#bomb{
+	height:20%;
+	background-color: red;
+
+}
+.bomb{
+	height:90%;
+	width:30%;
+	background-color: beige;
+	display:inline-block;
+	margin:3px;
+
+}
+
+
+
+
+
+
