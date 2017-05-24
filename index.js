@@ -161,9 +161,7 @@ function restart (){
 	score=[]
 	roundScore=[]
 	tries=[]
-	roundGoal=3
-
-	    
+	roundGoal=3	    
 }
 
 
@@ -210,15 +208,21 @@ function countDown(T){
 	
 
 		if (timer.length===0){
-			game=0
-			restart()
-			clearInterval(timerId)
+			// game=0
+			// restart()
+
+			// clearInterval(timerId)
+			quit()
 		}
 	},1500)
-	
 }
 
-
+function quit (){
+	restart()
+	game = 0 
+	clearInterval(timerId)
+	changeClass('#motherboard',level[levels.length-1],'level')
+}
 
 
 
