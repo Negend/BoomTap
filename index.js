@@ -4,7 +4,7 @@ var coloring =[]
 var playerColoring = []
 var x;
 var n = 3
-var roundGoal = 2
+var roundGoal = 3
 var tries =[]
 var score =[]
 var game = 1
@@ -132,7 +132,8 @@ function roundWin (){
 			score=[]
 			tries=[]
 			roundScore.push(1)
-			roundGoal=roundGoal+2
+			// roundGoal=roundGoal+2
+			// if theres time make a Time count down
 			console.log(roundScore.length)
 			levelChange()
 
@@ -154,7 +155,7 @@ function restart (){
 	score=[]
 	roundScore=[]
 	tries=[]
-	roundGoal=2
+	roundGoal=3
 
 	    
 }

@@ -53,7 +53,9 @@ header{
 	background:cover;	
 	border:7px solid beige;	
 	border-bottom-right-radius:20px;
-	background-image: url('./images/catherderal.jpeg')
+	background-image: url('https://tse2.mm.bing.net/th?id=OIP.bGBdSzjuP6bbfhNz80ZXSAEcDb&pid=15.1&P=0&w=300&h=300');
+	background-size: cover;
+	vertical-align:top;
 }
 .picOne{
 	background-image: url('./images/catherderal.jpeg');
