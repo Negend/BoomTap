@@ -4,7 +4,7 @@ var coloring =[]
 var playerColoring = []
 var x;
 var n = 3
-var roundGoal = 3
+var roundGoal = 2
 var tries =[]
 var score =[]
 var game = 0
@@ -12,7 +12,7 @@ var newPlay = 0
 var roundScore=[]
 var level = ['spinner','spinnertwo','spinnerthree','spinnerfour']
 var levels = [1]
-var T= 20
+var T= 30
 var timerId
 var levelPic = ['picOne','picTwo','picThree','picFour']
 var shake = 50
