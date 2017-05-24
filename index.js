@@ -133,6 +133,7 @@ function roundWin (){
 			roundScore.push(1)
 			roundGoal=roundGoal+2
 			console.log(roundScore.length)
+			levelChange()
 
 
 
@@ -175,7 +176,13 @@ function levelChange(){
 	 // the next a is multiple/modulua of 3 (3,6,9)
 	 // translating to position 123. a/3-1 for previous class.
 	}
-	if 
+	if (a > 9){
+		for(var i = 0; i = -1;){
+			$('#motherboard').toggleClass('spinnerthree')
+			i = i*10000
+
+	}
+		}
 }
 
 
