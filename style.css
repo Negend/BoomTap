@@ -21,7 +21,8 @@ header{
 	width:49%;
 	display: inline-block;
 	text-align: center;
-	background:black;
+	background:;
+	
 	height: 100%;
 	float:left;
 }
@@ -40,6 +41,8 @@ header{
 	height:50%;
 	display:inline-block;
 	background-color: beige;
+	background:url('images/worldEnd.jpg');
+	background:contain;
 	margin:7px;
 	border:7px;
 	border-radius: 20px;
@@ -66,6 +69,9 @@ header{
 	text-align: center;	
 	background-color: brown;
 	float:right;
+	background-image: url('./images/catherderal.jpeg');
+	background-size:contain;
+
 }
 #stats{
 	float:right;
@@ -80,8 +86,8 @@ header{
 }
 #motherboard{
 	display:inline-block;
-	height:55%;
-	width:60%;
+	height:320px;
+	width:320px;
 	/*background-color: rgb(51, 49, 49);*/
 	margin:70px 5px;
 	box-shadow: 5px 5px 1em black , -5px -5px 1em black, -5px 5px 1em black, 5px -5px 1em black;
@@ -108,15 +114,19 @@ header{
 #chip{
 	height:50%;
 	width:50%;
-	background-color: rgb(51, 49, 49);
+	background-color: rgb(31, 31, 31);
 	display:inline-block;
+	background-image:url('images/warning.jpg');
+	background-size: contain;
+	background-position: rotate(180deg);
 	/*background-image: url('./images/Circuitry.png');
 	background-size:cover;*/
 
 }
 .wiring{
 	border-radius:16px;
-	background-color: brown;
+	background-color: grey;
+	border: 1px solid black;
 	}
 #ones{
 	height:24%;
@@ -224,7 +234,7 @@ header{
 
 
 .new{
-	height:70px;
+	height:30px;
 	width:30%;
 	display:inline-block;
 	border:3px solid black;
@@ -236,4 +246,51 @@ header{
 	padding:0px;
 }
 
+#c4 {
+	background-image: url('images/boom.png');
+	background-size:contain;
+	background-repeat: no-repeat;
+
+}
+#danger{
+	background-image: url('images/Danger.jpg');
+	background-size:contain;
+	background-repeat: no-repeat;
+
+}
+#clock{
+	background-image: url('images/clock.jpg');
+	background-size:contain;
+	background-repeat: no-repeat;
+}
+
+.stats{
+	display:inline-block;
+	width:70%;
+	height:50px;
+	border-radius: 29px;
+	background-color: black;
+	color:beige;
+	font-size:40px;
+	padding:10px;
+
+}
+
+.spinner{
+	transform:rotate(360000deg);
+	transition:9000s;
+}
+.spinnertwo{
+	transform:rotate(-360000deg);
+	transition:6000s;
+}
+
+.spinnerthree{
+	transform:rotate(+360000deg);
+	transition:3000s;
+}
+.spinnerfour{
+	transform:rotate(-360000deg);
+	transition:3000s;
+}
 

@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Boom</title>
+	<link rel="stylesheet" type="text/css" href="../homework/rockpaperscissors/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	
 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
@@ -31,7 +33,7 @@
 			</div>
 		</section>
 		<section id='right'>
-			<div id='motherboard'>
+			<div id='motherboard' class='level'>
 
 				<div id='ones' class=wiring>
 					<div class='wire' id='red'></div>
@@ -45,7 +47,7 @@
 				</div>
 
 				<div id='chip'>
-					<p id='chipMessage'>Shibis technology. Each trip wire is set for explosion. Warning DANGER  </p>
+					
 				</div>
 
 				<div id='threes' class='wiring'>					
@@ -58,11 +60,18 @@
 					<div class='wire' id='green'></div>
 				</div>	
 			</div>
-			<div id= 'stats'></div>
+			<div id= 'stats'>
+				<ul>
+					<li id='' class='stats'>1</li>
+					<li id='' class='stats'>6</li>
+					<li id='' class='stats'></li>
+					<li id='' class='stats'></li>
+				</ul>
+			</div>
 			<div id= bomb>
-				<div class='bomb'></div>
-				<div class='bomb'></div>
-				<div class='bomb'></div>
+				<div id ='clock' class='bomb'></div>
+				<div id ='danger' class='bomb'></div>
+				<div id = 'c4' class='bomb'></div>
 			</div>
 		</section>
 	</main>
