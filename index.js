@@ -7,7 +7,7 @@ var n = 3
 var roundGoal = 3
 var tries =[]
 var score =[]
-var game = 1
+var game = 0
 var roundScore=[]
 var level = ['spinner','spinnertwo','spinnerthree','spinnerfour']
 var levels = [1]
@@ -20,20 +20,25 @@ function start (){
 
 
 play()
-
+$('#c4').click(function(event){
+	quit()
+	console.log('you abandoned your line of duty')
+})
 
 
 
 function play(){
 	$('#clock').click(function(event){
-		game=1
-		restart()
-		countDown(T)
-		colorSequence()
-		changeClass('#motherboard','level','spinner')
-		changeClass('#clue','clear','picOne')
+		if(game===0)	{
+			game=1
+			restart()
+			countDown(T)
+			colorSequence()
+			changeClass('#motherboard','level','spinner')
+			changeClass('#clue','clear','picOne')
 
-		colorChoice()
+			colorChoice()
+		}
 	})	
 }
 
