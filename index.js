@@ -12,7 +12,7 @@ var roundScore=[]
 var level = ['spinner','spinnertwo','spinnerthree','spinnerfour']
 var levels = [1]
 var T= 20
-
+var timerId
 
 function start (){
 
@@ -28,7 +28,7 @@ function play(){
 	$('#clock').click(function(event){
 		game=1
 		restart()
-		// countDown(T)
+		countDown(T)
 		colorSequence()
 		speedUp('level','spinner')
 		colorChoice()
@@ -131,7 +131,7 @@ function roundWin (){
 			clearInterval()
 			T = Math.floor(T*0.95)
 
-			clearInterval()
+			clearInterval(timerId)
 			countDown(T)
 			score=[]
 			tries=[]
@@ -199,16 +199,19 @@ function countDown(T){
 	var timer= new Array(T)
 
 	$($('.stats')[2]).html(timer.length)
-	setInterval(function(){
+	timerId = setInterval(function(){
+	
 		timer.pop()
-
 		$($('.stats')[2]).html(timer.length)
-	},1500)
-	if (timer.length===0){
-		game=0
-		clearInterval()
-	}
+	
+	
 
+		if (timer.length===0){
+			game=0
+			restart()
+			clearInterval(timerId)
+		}
+	},1500)
 	
 }
 
