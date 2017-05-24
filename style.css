@@ -1,15 +1,21 @@
 /*CONSTANTS OF THE PAGE*/
 body{
 	background-color: red;
+	text-align:center;
 }
 main{
 background-color: black;
 height:85vh;
+
 }
 header{
 	height:14vh;
 	background-color: beige;
 	border-radius: 20px;
+	
+	width:50%;
+	margin:auto;
+	display:inline-block;
 	
 
 }
@@ -100,7 +106,8 @@ header{
  
 #bomb{
 	height:20%;
-	background-color: red;
+	border-radius:10px;
+	box-shadow: 5px 5px 1em black , -5px -5px 1em black, -5px 5px 1em black, 5px -5px 1em black;
 
 }
 .bomb{
@@ -264,11 +271,12 @@ header{
 	background-repeat: no-repeat;
 }
 
+
 .stats{
 	display:inline-block;
-	width:70%;
+	width:50px;
 	height:50px;
-	border-radius: 29px;
+	border-radius: 100%;
 	background-color: black;
 	color:beige;
 	font-size:40px;
@@ -276,6 +284,8 @@ header{
 
 }
 
+
+/*spin levels*/
 .spinner{
 	transform:rotate(360000deg);
 	transition:9000s;
@@ -292,5 +302,25 @@ header{
 	transform:rotate(+360000deg);
 	transition:3000s;
 }
+
+/*top*/
+#logo{
+	height:90px;
+	width:90px;
+	box-shadow: 5px 5px 1em beige , -5px -5px 1em beige, -5px 5px 1em beige, 5px -5px 1em beige;
+	margin: 10px 15px;
+	border-radius:100%;
+	display:inline-block;
+	float:right;
+}
+h1{
+	display:inline-block;
+	margin:30px 10px;
+	font-family:cursive;
+	font-size: 50px;
+	font-weight: bold;
+}
+
+
 
 
