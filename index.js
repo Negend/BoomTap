@@ -8,12 +8,14 @@ var roundGoal = 3
 var tries =[]
 var score =[]
 var game = 0
+var newPlay = 0
 var roundScore=[]
 var level = ['spinner','spinnertwo','spinnerthree','spinnerfour']
 var levels = [1]
 var T= 20
 var timerId
 var levelPic = ['picOne','picTwo','picThree','picFour']
+var shake = 50
 function start (){
 
 
@@ -31,13 +33,17 @@ function play(){
 	$('#clock').click(function(event){
 		if(game===0)	{
 			game=1
+			
 			restart()
 			countDown(T)
 			colorSequence()
 			changeClass('#motherboard','level','spinner')
 			changeClass('#clue','clear','picOne')
-
-			colorChoice()
+			if(newPlay===0){
+				colorChoice()
+				newPlay = 1
+			}
+			
 		}
 	})	
 }
@@ -224,9 +230,44 @@ function countDown(T){
 
 function quit (){
 	restart()
-	game = 0 
+	game = 0.5 
 	clearInterval(timerId)
-	changeClass('#motherboard',level[levels.length-1],'level')
+	setTimeout(function(){
+		$('#motherboard').toggleClass(level[levels.length-1])
+	},3000)				
+	var shaker = setInterval(function(){
+		$('#motherboard').toggleClass('explode')	
+	},200)
+	setTimeout(function(){
+		clearInterval(shaker)
+		// changeClass('#motherboard',level[levels.length-1],'explode')
+		changeClass('#motherboard','explode','level')
+		game = 0		
+	},10000)
+		// setTimeout(function(){
+			// $('.explode').animate({
+			// 	transform:'rotateY(720deg)',
+			// 	height :  '250px',
+			// 	width : '250px'
+				
+			// },500)
+		// },1)
+		// setTimeout(function(){
+		// 	$('#motherboard').animate({	
+		// 		height : '320px',
+		// 		width : '320px',
+		// 		transform:'translateX(-20px)'
+		// 	},1000)
+
+
+		// },3000)
+
+		// transform:'translateX(-20px)'
+		// transform:'translateY(-20px)'
+		// display:'none'
+
+		// translate up left back forth n explode
+	
 }
 
 
