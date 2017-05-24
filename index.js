@@ -4,13 +4,13 @@ var coloring =[]
 var playerColoring = []
 var x;
 var n = 3
-var roundGoal = 1
+var roundGoal = 2
 var tries =[]
 var score =[]
 var game = 1
 var roundScore=[]
 var level = ['spinner','spinnertwo','spinnerthree','spinnerfour']
-
+var levels = [1]
 
 
 function start (){
@@ -84,6 +84,7 @@ function result(){
 			
 			
 			score.push('1')
+			$($('.stats')[0]).html(score.length+roundScore.length*10)
 			colorSequence()
 			console.log(score.length)
 
@@ -131,7 +132,7 @@ function roundWin (){
 			score=[]
 			tries=[]
 			roundScore.push(1)
-			// roundGoal=roundGoal+2
+			roundGoal=roundGoal+2
 			console.log(roundScore.length)
 			levelChange()
 
@@ -153,9 +154,9 @@ function restart (){
 	score=[]
 	roundScore=[]
 	tries=[]
-	roundGoal=1
+	roundGoal=2
 
-	
+	    
 }
 
 
@@ -172,18 +173,19 @@ function levelChange(){
 	var a = roundScore.length
 	if(a % 3 == 0 && a <10 && a > 1){
 	 speedUp(level[ a/3 - 1], level[a/3])
+	 levels.push(1)
+	 $($('.stats')[1]).html(levels.length)
 	 // this will take off the previous class and add 
 	 // the next a is multiple/modulua of 3 (3,6,9)
 	 // translating to position 123. a/3-1 for previous class.
 	}
 	if (a > 9){
-		for(var i = 0; i = -1;){
+		// lets try changing direction mid round
+		setInterval(function(){
 			$('#motherboard').toggleClass('spinnerthree')
-			i = i*10000
-			if(tries.length===4|| game === 0){
-				i= -1
-			}
-		}
+		},5000)	
+
+		
 	}
 }
 

@@ -284,13 +284,13 @@ header{
 	transform:rotate(-360000deg);
 	transition:6000s;
 }
-
-.spinnerthree{
-	transform:rotate(+360000deg);
-	transition:3000s;
-}
 .spinnerfour{
 	transform:rotate(-360000deg);
 	transition:3000s;
 }
+.spinnerthree{
+	transform:rotate(+360000deg);
+	transition:3000s;
+}
+
 
