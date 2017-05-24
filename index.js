@@ -191,7 +191,19 @@ function levelChange(){
 }
 
 
+function countDown(T){
+	var timer= new Array(T)
 
+	$($('.stats')[2]).html(timer.length)
+	setInterval(function(){
+		timer.pop()
+
+		$($('.stats')[2]).html(timer.length)
+	},1500)
+
+
+	
+}
 
 
 
