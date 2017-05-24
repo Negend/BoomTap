@@ -16,6 +16,8 @@ var T= 30
 var timerId
 var levelPic = ['picOne','picTwo','picThree','picFour']
 var shake = 50
+var points
+var highscore
 function start (){
 
 
@@ -97,7 +99,8 @@ function result(){
 			
 			
 			score.push('1')
-			$($('.stats')[0]).html(score.length+roundScore.length*10)
+			points = score.length+roundScore.length*10
+			$($('.stats')[0]).html(points)
 			colorSequence()
 			console.log(score.length)
 
@@ -172,7 +175,7 @@ function restart (){
 	score=[]
 	roundScore=[]
 	tries=[]
-	roundGoal=3	    
+	roundGoal=2	    
 }
 
 
@@ -229,7 +232,8 @@ function countDown(T){
 }
 
 function quit (){
-	restart()
+	
+
 	game = 0.5 
 	clearInterval(timerId)
 	setTimeout(function(){
@@ -242,7 +246,12 @@ function quit (){
 		clearInterval(shaker)
 		// changeClass('#motherboard',level[levels.length-1],'explode')
 		changeClass('#motherboard','explode','level')
-		game = 0		
+		game = 0
+		if (points>highscore){
+			highscore = points
+			$($('.stats')[3]).html(highscore)
+		}
+
 	},10000)
 		// setTimeout(function(){
 			// $('.explode').animate({
