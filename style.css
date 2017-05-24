@@ -1,6 +1,6 @@
 /*CONSTANTS OF THE PAGE*/
 body{
-	background-color: red;
+	background-color: black;
 	text-align:center;
 }
 main{
@@ -48,7 +48,7 @@ header{
 	display:inline-block;
 	background-color: beige;
 	background:url('images/worldEnd.jpg');
-	background:contain;
+	background:cover;
 	margin:7px;
 	border:7px;
 	border-radius: 20px;
@@ -106,16 +106,17 @@ header{
  
 #bomb{
 	height:20%;
-	border-radius:10px;
-	box-shadow: 5px 5px 1em black , -5px -5px 1em black, -5px 5px 1em black, 5px -5px 1em black;
+
 
 }
 .bomb{
-	height:90%;
-	width:30%;
+	height:110px;
+	width:110px;
 	background-color: beige;
 	display:inline-block;
 	margin:2px;
+	border-radius:10px;
+	box-shadow: 5px 5px 1em black , -5px -5px 1em black, -5px 5px 1em black, 5px -5px 1em black;
 }
 
 #chip{
@@ -263,6 +264,7 @@ header{
 	background-image: url('images/Danger.jpg');
 	background-size:contain;
 	background-repeat: no-repeat;
+	width:160px;
 
 }
 #clock{
