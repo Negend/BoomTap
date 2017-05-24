@@ -4,7 +4,7 @@ var coloring =[]
 var playerColoring = []
 var x;
 var n = 3
-var roundGoal = 4
+var roundGoal = 1
 var tries =[]
 var score =[]
 var game = 1
@@ -131,7 +131,7 @@ function roundWin (){
 			score=[]
 			tries=[]
 			roundScore.push(1)
-			roundGoal=roundGoal+2
+			// roundGoal=roundGoal+2
 			console.log(roundScore.length)
 			levelChange()
 
@@ -153,7 +153,7 @@ function restart (){
 	score=[]
 	roundScore=[]
 	tries=[]
-	roundGoal=4
+	roundGoal=1
 
 	
 }
@@ -180,9 +180,11 @@ function levelChange(){
 		for(var i = 0; i = -1;){
 			$('#motherboard').toggleClass('spinnerthree')
 			i = i*10000
-
-	}
+			if(tries.length===4|| game === 0){
+				i= -1
+			}
 		}
+	}
 }
 
 
