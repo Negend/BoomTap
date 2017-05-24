@@ -53,7 +53,7 @@ header{
 	background:cover;	
 	border:7px solid beige;	
 	border-bottom-right-radius:20px;
-	background-image: url('https://tse2.mm.bing.net/th?id=OIP.bGBdSzjuP6bbfhNz80ZXSAEcDb&pid=15.1&P=0&w=300&h=300');
+	
 	background-size: cover;
 	vertical-align:top;
 }
@@ -61,9 +61,14 @@ header{
 	background-image: url('./images/catherderal.jpeg');
 }
 .picTwo{
-	background:url('images/worldEnd.jpg');
+	background-image: url('https://tse2.mm.bing.net/th?id=OIP.bGBdSzjuP6bbfhNz80ZXSAEcDb&pid=15.1&P=0&w=300&h=300');
 }
-
+.picThree{
+	background:url('images/City.jpeg');
+}
+.picFour{
+	background-image: url('images/worldEnd.jpg');
+}
 
 
 

@@ -13,7 +13,7 @@ var level = ['spinner','spinnertwo','spinnerthree','spinnerfour']
 var levels = [1]
 var T= 20
 var timerId
-
+var levelPic = ['picOne','picTwo','picThree','picFour']
 function start (){
 
 
@@ -30,7 +30,9 @@ function play(){
 		restart()
 		countDown(T)
 		colorSequence()
-		speedUp('level','spinner')
+		changeClass('#motherboard','level','spinner')
+		changeClass('#clue','clear','picOne')
+
 		colorChoice()
 	})	
 }
@@ -165,11 +167,11 @@ function restart (){
 }
 
 
-function speedUp(rem,ad){
+function changeClass(id,rem,ad){
 	
 	
-	$('#motherboard').removeClass(rem)
-	$('#motherboard').addClass(ad)
+	$(id).removeClass(rem)
+	$(id).addClass(ad)
 
 }
 
@@ -177,7 +179,8 @@ function speedUp(rem,ad){
 function levelChange(){
 	var a = roundScore.length
 	if(a % 3 == 0 && a <10 && a > 1){
-	 speedUp(level[ a/3 - 1], level[a/3])
+	 changeClass('#motherboard',level[ a/3 - 1], level[a/3])
+	 changeClass('#clue',levelPic[ a/3 - 1], levelPic[a/3])
 	 levels.push(1)
 	 $($('.stats')[1]).html(levels.length)
 	 // this will take off the previous class and add 
