@@ -159,7 +159,7 @@ function clear(){
 function roundWin (){
 	if(score.length===roundGoal){
 			randomizer(roundSound.length)
-			sfx(roundSound[x])
+			soundEffects(roundSound[x])
 			console.log('Well Done next round')
 			clearInterval()
 			T = Math.floor(T*0.95)
@@ -212,8 +212,8 @@ function levelChange(){
 	if(a % 3 == 0 && a <10 && a > 1){
 	 changeClass('#motherboard',level[ a/3 - 1], level[a/3])
 	 changeClass('#clue',levelPic[ a/3 - 1], levelPic[a/3])
-	 levels.push(1)
-	 sfx(levelSound[levels.length])
+	 soundEffects(levelSound[levels.length])
+	 levels.push(1)	 
 	 $($('.stats')[1]).html(levels.length)
 	}
 	if (a > 9 && once==0){
@@ -244,12 +244,19 @@ function quit (){
 		clear()
 		clearInterval(timerId)
 		clearInterval(switchSpin)
-
+		sfx.stop()
+		soundEffects('Ohnoooo')
+		soundEffects('tick')
 		setTimeout(function(){
 			$('#motherboard').toggleClass(level[levels.length-1])
 			$('#clue').toggleClass(levelPic[levels.length-1])
 			changeClass('#motherboard','spinnerthree','level')
 			changeClass('#clue',levelPic[levels.length-1],'destroyed')
+			
+			soundEffects('exploding')
+			soundEffects('gameOver')
+			// soundEffects('cracking')
+
 		},3000)			
 			// turn to function dude
 		var shaker = setInterval(function(){
@@ -264,7 +271,9 @@ function quit (){
 				
 				highscore = points
 				$($('.stats')[3]).html(highscore)
-				console.log('highscore')
+				$($('.stats')[3]).toggleClass('spinnerthree')
+				setTimeout(function(){$($('.stats')[3]).toggleClass('spinnerthree')},1500)
+
 			}
 		},10000)
 	}

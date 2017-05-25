@@ -114,9 +114,9 @@ header{
 #stats{
 	float:right;
 	border-radius:20px;
-	width:18%;
+	width:19%;
 	display:inline-block;
-	height:50%;
+	height:60%;
 	background-color: red;
 	margin:7px;
 	margin-top:80px;
@@ -134,10 +134,11 @@ header{
 	background-image: url('./images/chip.jpeg');
 	background-size:cover;
 	position: absolute;
-	
+
+}	
 	  /*Will provide cirle shape*/
-}
-.level{
+
+.leve{
 	left:20px;
 }
  
@@ -314,8 +315,8 @@ header{
 
 .stats{
 	display:inline-block;
-	width:50px;
-	height:50px;
+	width:60px;
+	height:60px;
 	border-radius: 100%;
 	background-color: black;
 	color:beige;
@@ -330,22 +331,22 @@ header{
 .spinner{
 	transform:rotate(360000deg);
 	transition:9000s;
-	left:20px;
+	
 }
 .spinnertwo{
 	transform:rotate(-360000deg);
 	transition:6000s;
-	left:20px;
+	
 }
 .spinnerfour{
 	transform:rotate(-360000deg);
 	transition:3000s;
-	left:20px;
+	
 }
 .spinnerthree{
 	transform:rotate(+360000deg);
 	transition:3000s;
-	left:20px;
+	
 }
 .explode{
 	transform: none;
