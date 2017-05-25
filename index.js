@@ -177,8 +177,10 @@ function restart (){
 	roundScore=[]
 	tries=[]
 	roundGoal=2	
-	levels=new Array(1)
-	T=30   
+	levels= [1]
+	T=30
+	$($('.stats')[0]).html('0')   
+	$($('.stats')[1]).html(levels.length)   
 
 }
 
@@ -229,7 +231,7 @@ function quit (){
 		clearInterval(switchSpin)
 		setTimeout(function(){
 			$('#motherboard').toggleClass(level[levels.length-1])
-			$('#clue').toggleClass(levelpic[levels.length-1])
+			$('#clue').toggleClass(levelPic[levels.length-1])
 
 		},3000)			
 			// turn to function dude
