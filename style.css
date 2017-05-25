@@ -330,17 +330,17 @@ header{
 /*spin levels*/
 .spinner{
 	transform:rotate(360000deg);
-	transition:9000s;
+	transition:8000s;
 	
 }
 .spinnertwo{
 	transform:rotate(-360000deg);
-	transition:6000s;
+	transition:5000s;
 	
 }
 .spinnerfour{
 	transform:rotate(-360000deg);
-	transition:3000s;
+	transition:2000s;
 	
 }
 .spinnerthree{

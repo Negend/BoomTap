@@ -22,7 +22,10 @@ var points
 var highscore = 0
 var switchSpin
 var once = 0
-var sfx
+var sfx = new Audio()
+// var vareffect
+var rsfx = new Audio
+
 var roundSound=['notOver','Great','goodJob','hellYeah','pressure','cyamon','OhNo',]
 var levelSound=['','stadium','city','worldEnd'] 
 // default difficulty ssettings
@@ -159,6 +162,8 @@ function clear(){
 function roundWin (){
 	if(score.length===roundGoal){
 			randomizer(roundSound.length)
+			
+			// rsfx = new Audio();
 			soundEffects(roundSound[x])
 			console.log('Well Done next round')
 			clearInterval()
@@ -212,6 +217,7 @@ function levelChange(){
 	if(a % 3 == 0 && a <10 && a > 1){
 	 changeClass('#motherboard',level[ a/3 - 1], level[a/3])
 	 changeClass('#clue',levelPic[ a/3 - 1], levelPic[a/3])
+	 // rsfx.pause()
 	 soundEffects(levelSound[levels.length])
 	 levels.push(1)	 
 	 $($('.stats')[1]).html(levels.length)
@@ -244,7 +250,7 @@ function quit (){
 		clear()
 		clearInterval(timerId)
 		clearInterval(switchSpin)
-		sfx.stop()
+
 		soundEffects('Ohnoooo')
 		soundEffects('tick')
 		setTimeout(function(){
@@ -294,6 +300,7 @@ function difficulty (){
 }
 
 function soundEffects(effect){
+	sfx.pause();
 	sfx = new Audio('audio/'+ effect +'.mp3')
 	sfx.play()
 }
