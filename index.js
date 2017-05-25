@@ -277,8 +277,8 @@ function quit (){
 				
 				highscore = points
 				$($('.stats')[3]).html(highscore)
-				$($('.stats')[3]).toggleClass('spinnerthree')
-				setTimeout(function(){$($('.stats')[3]).toggleClass('spinnerthree')},1500)
+				$($('.stats')[3]).toggleClass('spas')
+				setTimeout(function(){$($('.stats')[3]).toggleClass('spas')},1500)
 
 			}
 		},10000)
