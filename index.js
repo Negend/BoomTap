@@ -17,7 +17,8 @@ var timerId
 var levelPic = ['picOne','picTwo','picThree','picFour']
 var shake = 50
 var points
-var highscore
+var highscore = 0
+var switchSpin
 function start (){
 
 
@@ -152,8 +153,8 @@ function roundWin (){
 			score=[]
 			tries=[]
 			roundScore.push(1)
-			// roundGoal=roundGoal+2
-			// if theres time make a Time count down
+			// roundGoal=roundGoal+1
+
 			console.log(roundScore.length)
 			levelChange()
 
@@ -162,7 +163,7 @@ function roundWin (){
 	}else if(tries.length===4){
 		console.log('game over')
 		clear()
-		game =  0		
+		quit()
 	}	
 }
 
@@ -175,7 +176,10 @@ function restart (){
 	score=[]
 	roundScore=[]
 	tries=[]
-	roundGoal=2	    
+	roundGoal=2	
+	levels=new Array(1)
+	T=30   
+
 }
 
 
@@ -195,88 +199,55 @@ function levelChange(){
 	 changeClass('#clue',levelPic[ a/3 - 1], levelPic[a/3])
 	 levels.push(1)
 	 $($('.stats')[1]).html(levels.length)
-	 // this will take off the previous class and add 
-	 // the next a is multiple/modulua of 3 (3,6,9)
-	 // translating to position 123. a/3-1 for previous class.
 	}
 	if (a > 9){
-		// lets try changing direction mid round
-		setInterval(function(){
-			$('#motherboard').toggleClass('spinnerthree')
-		},5000)	
 
-		
+		switchSpin = setInterval(function(){
+			$('#motherboard').toggleClass('spinnerthree')
+		},5000)			
 	}
 }
 
 
 function countDown(T){
 	var timer= new Array(T)
-
 	$($('.stats')[2]).html(timer.length)
-	timerId = setInterval(function(){
-	
+	timerId = setInterval(function(){	
 		timer.pop()
 		$($('.stats')[2]).html(timer.length)
-	
-	
-
 		if (timer.length===0){
-			// game=0
-			// restart()
-
-			// clearInterval(timerId)
 			quit()
 		}
 	},1500)
 }
 
-function quit (){
-	
+function quit (){	
+	if(game===1){
+		game = 0.5 
+		clear()
+		clearInterval(timerId)
+		clearInterval(switchSpin)
+		setTimeout(function(){
+			$('#motherboard').toggleClass(level[levels.length-1])
+			$('#clue').toggleClass(levelpic[levels.length-1])
 
-	game = 0.5 
-	clearInterval(timerId)
-	setTimeout(function(){
-		$('#motherboard').toggleClass(level[levels.length-1])
-	},3000)				
-	var shaker = setInterval(function(){
-		$('#motherboard').toggleClass('explode')	
-	},200)
-	setTimeout(function(){
-		clearInterval(shaker)
-		// changeClass('#motherboard',level[levels.length-1],'explode')
-		changeClass('#motherboard','explode','level')
-		game = 0
-		if (points>highscore){
-			highscore = points
-			$($('.stats')[3]).html(highscore)
-		}
+		},3000)			
+			// turn to function dude
+		var shaker = setInterval(function(){
+			$('#motherboard').toggleClass('explode')	
+		},200)
+		setTimeout(function(){
+			clearInterval(shaker)			
+			changeClass('#motherboard','explode','level')
 
-	},10000)
-		// setTimeout(function(){
-			// $('.explode').animate({
-			// 	transform:'rotateY(720deg)',
-			// 	height :  '250px',
-			// 	width : '250px'
-				
-			// },500)
-		// },1)
-		// setTimeout(function(){
-		// 	$('#motherboard').animate({	
-		// 		height : '320px',
-		// 		width : '320px',
-		// 		transform:'translateX(-20px)'
-		// 	},1000)
-
-
-		// },3000)
-
-		// transform:'translateX(-20px)'
-		// transform:'translateY(-20px)'
-		// display:'none'
-
-		// translate up left back forth n explode
-	
+			game = 0
+			if (points>highscore){
+				highscore = points
+				$($('.stats')[3]).html(highscore)
+				console.log('highscore')
+			}
+		},10000)
+	}
 }
 
 
