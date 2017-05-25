@@ -23,8 +23,8 @@ var highscore = 0
 var switchSpin
 var once = 0
 // default difficulty ssettings
-var goal = 45
-var time = 1
+var goal = 1
+var time = 45
 function start (){
 
 

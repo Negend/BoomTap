@@ -57,6 +57,10 @@ header{
 	background-size: cover;
 	vertical-align:top;
 }
+.clear{
+	background-image: url('images/parlour.jpg');
+}
+
 .picOne{
 	background-image: url('./images/cathederal.jpeg');
 }
@@ -68,6 +72,10 @@ header{
 }
 .picFour{
 	background-image: url('images/worldEnd.jpg');
+}
+
+.destroyed{
+	background-image: url('')
 }
 
 
@@ -85,9 +93,11 @@ header{
 
 .menu{
 	background-color: blue;
-	height:20px;
-	width:20px;
+	height:30px;
+	width:80%;
+	border:3px solid black;
 	margin:5px;
+	vertical-align: top;
 }
 /*RIGHT SIDE OF PAGE*/
 #right{
@@ -311,6 +321,7 @@ header{
 	color:beige;
 	font-size:40px;
 	padding:10px;
+	margin-top:10px;
 
 }
 
