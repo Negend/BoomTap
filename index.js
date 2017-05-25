@@ -4,7 +4,8 @@ var coloring =[]
 var playerColoring = []
 var x;
 var n = 3
-var roundGoal = 2
+
+var roundGoal
 var tries =[]
 var score =[]
 var game = 0
@@ -12,18 +13,28 @@ var newPlay = 0
 var roundScore=[]
 var level = ['spinner','spinnertwo','spinnerthree','spinnerfour']
 var levels = [1]
-var T= 30
+
+var T
 var timerId
 var levelPic = ['picOne','picTwo','picThree','picFour']
 var shake = 50
 var points
 var highscore = 0
 var switchSpin
+var once = 0
+// default difficulty ssettings
+var goal = 45
+var time = 1
 function start (){
 
 
 
 
+
+
+
+
+difficulty()
 play()
 $('#c4').click(function(event){
 	quit()
@@ -36,8 +47,7 @@ function play(){
 	$('#clock').click(function(event){
 		if(game===0)	{
 			game=1
-			
-			restart()
+			restart(goal,time)
 			countDown(T)
 			colorSequence()
 			changeClass('#motherboard','level','spinner')
@@ -171,26 +181,23 @@ function roundWin (){
 
 
 
-function restart (){
+function restart (rounds,timing){
 	clear()
+	once = 0
 	score=[]
 	roundScore=[]
 	tries=[]
-	roundGoal=2	
+	roundGoal=rounds
 	levels= [1]
-	T=30
+	T=timing
 	$($('.stats')[0]).html('0')   
 	$($('.stats')[1]).html(levels.length)   
-
 }
 
 
-function changeClass(id,rem,ad){
-	
-	
+function changeClass(id,rem,ad){	
 	$(id).removeClass(rem)
 	$(id).addClass(ad)
-
 }
 
 
@@ -202,11 +209,12 @@ function levelChange(){
 	 levels.push(1)
 	 $($('.stats')[1]).html(levels.length)
 	}
-	if (a > 9){
+	if (a > 9 && once==0){
 
 		switchSpin = setInterval(function(){
 			$('#motherboard').toggleClass('spinnerthree')
-		},5000)			
+		},5000)	
+		once=1		
 	}
 }
 
@@ -229,10 +237,11 @@ function quit (){
 		clear()
 		clearInterval(timerId)
 		clearInterval(switchSpin)
+
 		setTimeout(function(){
 			$('#motherboard').toggleClass(level[levels.length-1])
 			$('#clue').toggleClass(levelPic[levels.length-1])
-
+			changeClass('#motherboard','spinnerthree','level')
 		},3000)			
 			// turn to function dude
 		var shaker = setInterval(function(){
@@ -252,7 +261,18 @@ function quit (){
 	}
 }
 
-
-
+function difficulty (){
+	var timing= [45,30,20]
+	var rounds= [3,2,1]
+	
+	$('.menu').each(function(i,name){
+		$(this).click(function(event){
+			if (game === 0){
+				goal = rounds[i]
+				time = timing[i]
+			}
+		})
+	})
+}
 
 }
