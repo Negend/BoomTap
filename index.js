@@ -22,6 +22,9 @@ var points
 var highscore = 0
 var switchSpin
 var once = 0
+var sfx
+var roundSound=['notOver','Great','goodJob','hellYeah','pressure','cyamon','OhNo',]
+var levelSound=['','stadium','city','worldEnd'] 
 // default difficulty ssettings
 var goal = 1
 var time = 45
@@ -47,6 +50,7 @@ function play(){
 	$('#clock').click(function(event){
 		if(game===0)	{
 			game=1
+			soundEffects('help')
 			restart(goal,time)
 			countDown(T)
 			colorSequence()
@@ -154,6 +158,8 @@ function clear(){
 
 function roundWin (){
 	if(score.length===roundGoal){
+			randomizer(roundSound.length)
+			sfx(roundSound[x])
 			console.log('Well Done next round')
 			clearInterval()
 			T = Math.floor(T*0.95)
@@ -207,6 +213,7 @@ function levelChange(){
 	 changeClass('#motherboard',level[ a/3 - 1], level[a/3])
 	 changeClass('#clue',levelPic[ a/3 - 1], levelPic[a/3])
 	 levels.push(1)
+	 sfx(levelSound[levels.length])
 	 $($('.stats')[1]).html(levels.length)
 	}
 	if (a > 9 && once==0){
@@ -242,6 +249,7 @@ function quit (){
 			$('#motherboard').toggleClass(level[levels.length-1])
 			$('#clue').toggleClass(levelPic[levels.length-1])
 			changeClass('#motherboard','spinnerthree','level')
+			changeClass('#clue',levelPic[levels.length-1],'destroyed')
 		},3000)			
 			// turn to function dude
 		var shaker = setInterval(function(){
@@ -250,9 +258,10 @@ function quit (){
 		setTimeout(function(){
 			clearInterval(shaker)			
 			changeClass('#motherboard','explode','level')
-
+			changeClass('#clue','destroyed','clear')
 			game = 0
 			if (points>highscore){
+				
 				highscore = points
 				$($('.stats')[3]).html(highscore)
 				console.log('highscore')
@@ -274,5 +283,16 @@ function difficulty (){
 		})
 	})
 }
+
+function soundEffects(effect){
+	sfx = new Audio('audio/'+ effect +'.mp3')
+	sfx.play()
+}
+
+// document.getElementById("sound").innerHTML='<audio autoplay="autoplay"><source src="' + filename + '.mp3" type="audio/mpeg" /><source src="' + filename + '.ogg" type="audio/ogg" /><embed hidden="true" autostart="true" loop="false" src="' + filename +'.mp3" /></audio>'
+// var audio = new Audio('/path/to/audio/file.mp3');
+// audio.play();
+
+
 
 }
