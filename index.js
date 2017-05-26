@@ -24,8 +24,8 @@ var switchSpin
 var once = 0
 var sfx = new Audio()
 // var vareffect
-var rsfx = new Audio
-
+var tsfx = new Audio()
+var theme = ['beeep','thriller','blowUp']
 var roundSound=['notOver','Great','goodJob','hellYeah','pressure','cyamon','OhNo',]
 var levelSound=['','stadium','city','worldEnd'] 
 // default difficulty ssettings
@@ -44,8 +44,8 @@ var message = [
 
 
 function start (){
-
-
+themeSound(theme[1])
+$($('.message')[0]).html(message[0])
 
 
 
@@ -67,6 +67,8 @@ function play(){
 	$('#clock').click(function(event){
 		if(game===0)	{
 			// play new sound manually
+			$($('.message')[0]).html(message[1])
+			themeSound(theme[0])
 			game=1
 			soundEffects('help')
 			restart(goal,time)
@@ -236,6 +238,7 @@ function levelChange(){
 	 soundEffects(levelSound[levels.length])
 	 levels.push(1)	 
 	 $($('.stats')[1]).html(levels.length)
+	 $($('.message')[0]).html(message[levels.length])
 	}
 	if (a > 9 && once==0){
 
@@ -273,8 +276,8 @@ function quit (){
 			$('#clue').toggleClass(levelPic[levels.length-1])
 			changeClass('#motherboard','spinnerthree','level')
 			changeClass('#clue',levelPic[levels.length-1],'destroyed')
-			
-			soundEffects('exploding')
+			$($('.message')[0]).html(message[5])
+			themeSound(theme[2])
 			soundEffects('gameOver')
 			// soundEffects('cracking')
 
@@ -285,9 +288,11 @@ function quit (){
 		},200)
 		setTimeout(function(){
 			clearInterval(shaker)			
+			themeSound(theme[1])
 			changeClass('#motherboard','explode','level')
 			changeClass('#clue','destroyed','clear')
 			game = 0
+			$($('.message')[0]).html(message[0])
 			if (points>highscore){
 				
 				highscore = points
@@ -319,5 +324,10 @@ function soundEffects(effect){
 	sfx = new Audio('audio/'+ effect +'.mp3')
 	sfx.play()
 }
+function themeSound(effect){
+	tsfx.pause()
+	tsfx = new Audio('audio/'+ effect +'.mp3')
+	tsfx.play()
 
+}
 }
