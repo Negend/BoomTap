@@ -1,7 +1,7 @@
 /*CONSTANTS OF THE PAGE*/
 body{
 	background-color: black;
-
+	min-width:780px;
 	max-height: 100vh;
 }
 main{
@@ -68,7 +68,7 @@ nav{
 #infoList{
 
 	position:absolute;
-	
+
 	transition:5s;
 	bottom: 150px;
 	margin:30px;
@@ -311,12 +311,12 @@ nav{
 #red{
 	height:100%;
 	width:20%;
-	background-color: red;
+	background: linear-gradient(to right,black,red,red,red,red,red,red,red,black);
 	display:inline-block;
 	margin: 0 5px;
 }
 #blue{
-	background-color: blue;
+	background: linear-gradient( black,blue,blue,blue,blue,blue,blue,blue,blue,black);	
 	width:100%;
 	height:15%;
 	margin-top:25px;
@@ -325,18 +325,18 @@ nav{
 #green{
 	height:100%;
 	width:20%;
-	background-color: green;
+	background: linear-gradient(to right,black,green,green,green,green,green,green,green,black);
 	display:inline-block;
 	margin: 0 10px;
 }
 #purple{
-	background-color: purple;
+	background: linear-gradient( black,purple,purple,purple,purple,purple,purple,black);
 	width:100%;
 	height:15%;
 	margin-top:35px;
 }
 #white{
-	background-color: white;
+	background: linear-gradient( grey,white,white,white,white,white,white,white,white,grey);
 	width:100%;
 	height:15%;
 	margin-top:35px;
@@ -344,12 +344,12 @@ nav{
 #black{
 	height:100%;
 	width:20%;
-	background-color: black;
+	background: linear-gradient(to right,black,black,black,black,black,black);
 	display:inline-block;
 	margin: 0 10px;
 }
 #orange{
-	background-color: orange;
+	background: linear-gradient( black,orange,orange,orange,orange,orange,orange,orange,black);	
 	width:100%;
 	height:15%;
 	margin-top:47px;
@@ -357,7 +357,7 @@ nav{
 #yellow{
 	height:100%;
 	width:20%;
-	background-color: yellow;
+	background: linear-gradient(to right,black,yellow,yellow,yellow,yellow,yellow,yellow,yellow,black);
 	display:inline-block;
 	margin: 0 5px;
 
@@ -365,7 +365,7 @@ nav{
 #pink{
 	height:100%;
 	width:20%;
-	background-color: pink;
+	background: linear-gradient(to right,black,pink,pink,pink,pink,pink,pink,pink,black);
 	display:inline-block;
 	margin: 0 5px;
 }
