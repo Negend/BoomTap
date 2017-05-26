@@ -1,7 +1,7 @@
 /*CONSTANTS OF THE PAGE*/
 body{
 	background-color: black;
-	
+	min-width:1047px;
 }
 main{
 /*background-image: url('images/atlas.jpeg');*/
@@ -53,6 +53,47 @@ nav{
 	height: 100%;
 	vertical-align:top;
 }
+.info{
+	margin:5% 0;
+	font-weight: bold;
+	text-shadow: 3px 3px beige;
+}
+.hide{
+	display:none;
+}
+#infoList{
+
+	position:absolute;
+	transition:5s;
+	float:right;
+	margin:30px;
+	background-color: white;
+	height:50%;
+	width:45%;
+	border: 7px solid darkgreen;
+	border-radius: 30px;
+	text-align: left;
+
+}
+#infoList ul{
+	display: inline-block;
+	font-family: arial;
+	font-size: 120%;
+	width:90%;
+	margin:10%;
+	list-style-type:arabic-indic;
+
+}
+
+.message{
+	font-size: 140%;
+	font-family:arial;
+}
+#bold{
+	float: right;
+	margin:10px;
+}
+
 #message{
 	background-color: white;
 	border:13px solid black;
@@ -60,6 +101,7 @@ nav{
 	width: 95%;
 	display:block;
 	margin:0 auto;
+
 	/*margin-bottom: 3px;
 	margin-top: 20px;
 	border-top-right-radius: 50px;
@@ -114,7 +156,7 @@ nav{
 }
 
 .menu{
-	background-color: blue;
+	background-color: white;
 	height:30px;
 	width:80%;
 	border:3px solid black;
@@ -136,7 +178,20 @@ nav{
 	background: linear-gradient( black,white);
 	color:beige;
 }
+#Info{
+	background-color: white;
+	height:30px;
+	width:80%;
+	border:3px solid black;
+	margin:5px;
+	vertical-align: top;
+	text-shadow: 1px 1px black;
+	font-family:cursive;
+	font-size: 143%;
+}
+#info:hover{
 
+}
 
 
 /*RIGHT SIDE OF PAGE*/
@@ -180,17 +235,10 @@ nav{
 }	
 	  /*Will provide cirle shape*/
 
-.leve{
-	
-}
+
  
 #bomb{
 	height:20%;
-
-	/*position: absolute;*/
-	
-	
-
 
 }
 .bomb{
@@ -210,9 +258,6 @@ nav{
 	display:inline-block;
 	background-image:url('images/warning.jpg');
 	background-size: contain;
-	/*background-image: url('./images/Circuitry.png');
-	background-size:cover;*/
-
 }
 .wiring{
 	border-radius:16px;
@@ -325,10 +370,10 @@ nav{
 
 
 .new{
-	height:30px;
+	height:70px;
 	width:30%;
 	display:inline-block;
-	border:3px solid beige;
+	border:3px solid white;
 	border-radius:100%;
 	/*background-color: black;*/
 	list-style:none;

@@ -31,14 +31,26 @@ var levelSound=['','stadium','city','worldEnd']
 // default difficulty ssettings
 var goal = 1
 var time = 45
+
+var message = [ 
+	'Please diffuse the bomb, you need to TAP the right wires I will guide you',
+	'produce the colour combination below, each time. Hurry theres people here',
+	'These people do not rest they have a stadium full of civillians, be a hero',
+	'they are going nuclear, the world is at war. You must save the city',
+	'The world is broken. Everyone went nuclear you are our last line against extintion',
+	'GAME OVER,  GAME OVER, GAME OVER, GAME OVER, GAME OVER, GAME OVER,'
+
+]
+
+
 function start (){
 
 
 
 
 
-
-
+// out of game music
+// soundEffects()
 
 difficulty()
 play()
@@ -46,12 +58,15 @@ $('#c4').click(function(event){
 	quit()
 	console.log('you abandoned your line of duty')
 })
-
+$('#Info').click(function(){
+	$('#infoList').toggleClass('hide')
+})
 
 
 function play(){
 	$('#clock').click(function(event){
 		if(game===0)	{
+			// play new sound manually
 			game=1
 			soundEffects('help')
 			restart(goal,time)
@@ -250,7 +265,7 @@ function quit (){
 		clear()
 		clearInterval(timerId)
 		clearInterval(switchSpin)
-
+		// .pause()background sound
 		soundEffects('Ohnoooo')
 		soundEffects('tick')
 		setTimeout(function(){
@@ -306,8 +321,7 @@ function soundEffects(effect){
 }
 
 // document.getElementById("sound").innerHTML='<audio autoplay="autoplay"><source src="' + filename + '.mp3" type="audio/mpeg" /><source src="' + filename + '.ogg" type="audio/ogg" /><embed hidden="true" autostart="true" loop="false" src="' + filename +'.mp3" /></audio>'
-// var audio = new Audio('/path/to/audio/file.mp3');
-// audio.play();
+
 
 
 
