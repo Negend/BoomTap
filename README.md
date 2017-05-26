@@ -1,77 +1,32 @@
-#Dodgeball Plan
-A funky game of dodgeball. Similar to penalty shootout
-##Features
-* Player must try to throw ball at opponent
-* Opponent will dodge randomly left or right, different angles
-* player throws by clicking 
-* hit all players in a certain time
-* add more players
-* increase speed
-* randomly give players ability to block
-* Set power ratings.
-* low power shots that hit reduce points(catch)
-* powerful, powerful shots prevent blocks
-* possibly 2player
-	* left and right within in a div
-	* if position of player and positon of click are equal,goal
-	
 
-## Aims
-###Javascript
-* Load page  
-* Get a click on a div
-* Register click as hit
-* Update hit on score board
-* Begin countdown timer
-* Stop game at end of timer
-* If number of players equal 0. reset game with increase of player.
-* Reduce time on next game
-* Make players move
-* Increase speed
-* Add jumping 
-* Add random blocking at certain intervals
-
-
-###CSS and HTML
-* menu page
-* game page
-* cursor will change to the ball
-* game starts as soon as game page loads
-* bottom half of page includes stats, power level, Dodgeball avatar, count down
-* top half will display half of court
-* players move within court(top half) only
-
-#Dodge Bomb
-Diffuse the bomb through easy mini games (memory puzzle or maze). Careful of your stress level though! lives are at steak
+#Boom Tap
+####Diffuse the bomb to beat the highscore, lives are at steak.
 
 ##Features
-* player is bomb disposal
-* select the correct wire on each round
-* the correct wire is found by solving puzzle
+* Player is a member of the bomb disposal unit
+* Select the correct wires in order on each round
+* The correct wire sequence is found in the Display box
 	* wires are colored
-	* player receives color from phone memory game
-	* player is shown picture 
-	* correct wire is equal to the colour of something in the picture
-	* player is shown screen of a maze 
-	* like maze in school to see which wire path leads to safety
-* stress levels are factored in each round
-* each round he saves bigger towns
-* screen shaking or moving wire
-* colour blind mode
-* timer
-* rather than shaking screen. make the section of wiring rotate
-* lose points for clicking the wrong place
+	* Player must tap them in order
+	* Sequence is random and up to three at a time
 
-##Aims
-###javascript
-* make click responsive on wires
-* click should register as success or failure
-* update on score board
-* next colour should be chosen 
-* click should register only that color as pass but others as failures
-* more colours added
-* transform rotation
-* 		 
+	
+* Player gets four attempts to match the sequence on the display box
+* Stress levels are factored in each round
+* Each level the  player saves  a bigger crowds
+* The bombs chip spins at different speeds and direction depending on level
+* Time limit on each round decreases
+* Difficulty levels available determine time limit
+* Instruction tab gives the user info on how to play
+* 
+
+##Installation
+Type in terminal
+
+```
+git clone git@github.com:Negend/My-Game.git
+
+```
 
 
 
