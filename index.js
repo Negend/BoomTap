@@ -167,14 +167,14 @@ function roundWin (){
 			soundEffects(roundSound[x])
 			console.log('Well Done next round')
 			clearInterval()
-			T = Math.floor(T*0.95)
+			T = Math.round(T*0.95)
 
 			clearInterval(timerId)
 			countDown(T)
 			score=[]
 			tries=[]
 			roundScore.push(1)
-			// roundGoal=roundGoal+1
+			roundGoal=roundGoal+1
 
 			console.log(roundScore.length)
 			levelChange()
