@@ -34,7 +34,7 @@ var time = 45
 
 var message = [ 
 	'Please diffuse the bomb, you need to TAP the right wires I will guide you',
-	'produce the colour combination below, each time. Hurry theres people here',
+	'Produce the colour combination below, each time. Hurry theres people here. Lives are at steak',
 	'These people do not rest they have a stadium full of civillians, be a hero',
 	'they are going nuclear, the world is at war. You must save the city',
 	'The world is broken. Everyone went nuclear you are our last line against extintion',
@@ -328,6 +328,7 @@ function themeSound(effect){
 	tsfx.pause()
 	tsfx = new Audio('audio/'+ effect +'.mp3')
 	tsfx.play()
+	tsfx.volume=0.3
 
 }
 }
