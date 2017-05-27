@@ -30,7 +30,7 @@ var roundSound=['notOver','Great','goodJob','hellYeah','pressure','cyamon','OhNo
 var levelSound=['','stadium','city','worldEnd'] 
 // default difficulty ssettings
 var goal = 1
-var time = 45
+var time = 1000
 
 var message = [ 
 	'Please diffuse the bomb, you need to TAP the right wires I will guide you',
@@ -75,7 +75,7 @@ function play(){
 			countDown(T)
 			colorSequence()
 			changeClass('#motherboard','level','spinner')
-			changeClass('#clue','clear','picOne')
+			changeClass('.clue','clear','picOne')
 			if(newPlay===0){
 				colorChoice()
 				newPlay = 1
@@ -112,7 +112,7 @@ function colorSequence(){
 		randomizer(wires.length)
 		coloring.push(wires[x])
 		
-		showColor(wires[x])
+		showColor(wires[x],'strong')
 	}
 }
 
@@ -154,9 +154,9 @@ function result(){
 
 
 
-function showColor (color){
-	var newClue = $("<li class='new'></li>").css('background',color)
-		$("#Sequence").append(newClue)
+function showColor (color, mainNew){
+	var newClue = $("<li class='new "+ mainNew +"'></li>").css('background',color)
+		$(".Sequence").append(newClue)
 }
 
 
@@ -273,9 +273,9 @@ function quit (){
 		soundEffects('tick')
 		setTimeout(function(){
 			$('#motherboard').toggleClass(level[levels.length-1])
-			$('#clue').toggleClass(levelPic[levels.length-1])
+			$('.clue').toggleClass(levelPic[levels.length-1])
 			changeClass('#motherboard','spinnerthree','level')
-			changeClass('#clue',levelPic[levels.length-1],'destroyed')
+			changeClass('.clue',levelPic[levels.length-1],'destroyed')
 			$($('.message')[0]).html(message[5])
 			themeSound(theme[2])
 			soundEffects('gameOver')
@@ -290,7 +290,7 @@ function quit (){
 			clearInterval(shaker)			
 			themeSound(theme[1])
 			changeClass('#motherboard','explode','level')
-			changeClass('#clue','destroyed','clear')
+			changeClass('.clue','destroyed','clear')
 			game = 0
 			$($('.message')[0]).html(message[0])
 			if (points>highscore){

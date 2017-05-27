@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Boom</title>
-	<link rel="stylesheet" type="text/css" href="../homework/rockpaperscissors/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="reset.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	
 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
@@ -77,7 +77,11 @@
 			</div> -->
 			<div id= bomb>
 				<div id ='clock' class='bomb'></div>
-				<div id ='danger' class='bomb'></div>
+				<div id ='danger' class='bomb'>
+					<div id='display' class='clue clear'>
+						<ul class = 'Sequence'></ul>
+					</div>
+				</div>
 				<div id = 'c4' class='bomb'></div>
 			</div>
 		</section>
@@ -86,8 +90,8 @@
 			<div id='message'>
 				<p class = message>Press the clock to start<span id='bold'></span></p>
 			</div>
-			<div id='clue' class='clear'>
-				<ul id = Sequence></ul>
+			<div id='clue' class='clue clear'>
+				<ul class = 'Sequence display'></ul>
 				<div id= 'infoList' class='hide'>
 				<ul>
 					<li id='' class='info'>Press the clock to start</li>
