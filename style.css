@@ -502,7 +502,21 @@ h1{
 
 
 }
-
+@media screen and (max-width: 890px){
+	#right{
+		width:35%;
+	}
+	#left{
+		width:60%;
+	}
+	#clue{
+		height:60%;
+	}
+	#message{
+		height:36%;
+		line-height: 2;
+	}
+}
 @media screen and ( max-width:663px) {
 	#right{
 		display:none;
