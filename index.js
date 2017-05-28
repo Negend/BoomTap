@@ -30,7 +30,7 @@ var roundSound=['notOver','Great','goodJob','hellYeah','pressure','cyamon','OhNo
 var levelSound=['','stadium','city','worldEnd'] 
 // default difficulty ssettings
 var goal = 1
-var time = 1000
+var time = 30
 
 var message = [ 
 	'Please diffuse the bomb, you need to TAP the right wires I will guide you',
