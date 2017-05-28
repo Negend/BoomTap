@@ -3,6 +3,7 @@ body{
 	background-color: black;
 	
 	max-height: 100vh;
+	cursor:pointer;
 }
 main{
 
@@ -275,6 +276,13 @@ nav{
 	border-radius:10px;
 	box-shadow: 5px 5px 1em black , -5px -5px 1em black, -5px 5px 1em black, 5px -5px 1em black;
 }
+#clock:hover{
+	box-shadow: 5px 5px 1em beige , -5px -5px 1em beige, -5px 5px 1em beige, 5px -5px 1em beige;
+}
+#c4:hover{
+	box-shadow: 5px 5px 1em beige , -5px -5px 1em beige, -5px 5px 1em beige, 5px -5px 1em beige;
+}
+
 
 #chip{
 	height:50%;

@@ -191,7 +191,7 @@ function roundWin (){
 			score=[]
 			tries=[]
 			roundScore.push(1)
-			roundGoal=roundGoal+1
+			// roundGoal=roundGoal+1
 
 			console.log(roundScore.length)
 			levelChange()
@@ -233,7 +233,7 @@ function levelChange(){
 	var a = roundScore.length
 	if(a % 3 == 0 && a <10 && a > 1){
 	 changeClass('#motherboard',level[ a/3 - 1], level[a/3])
-	 changeClass('#clue',levelPic[ a/3 - 1], levelPic[a/3])
+	 changeClass('.clue',levelPic[ a/3 - 1], levelPic[a/3])
 	 // rsfx.pause()
 	 soundEffects(levelSound[levels.length])
 	 levels.push(1)	 
