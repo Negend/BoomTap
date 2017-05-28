@@ -11,7 +11,7 @@ height:88vh;
 
 }
 header{
-	height:12vh;
+	height:10vh;
 	background: linear-gradient( white,black,black);		
 	min-width:360px;
 	width:100vw;	
@@ -73,7 +73,7 @@ nav{
 	bottom: 150px;
 	margin:30px;
 	background-color: white;
-	height:80%;
+	
 	
 	border: 7px solid darkgreen;
 	border-radius: 30px;
@@ -360,7 +360,7 @@ nav{
 #black{
 	height:100%;
 	width:20%;
-	background: linear-gradient(to right,darkgrey,black,black,black,black,black,black,darkgrey);
+	background: linear-gradient(to right,#2d2d2d,black,black,#2d2d2d);
 	display:inline-block;
 	margin: 0 10px;
 }
@@ -516,6 +516,11 @@ h1{
 		height:36%;
 		line-height: 2;
 	}
+	.bomb{
+		width:10vw;
+		height:10vw;
+
+	}	
 }
 @media screen and ( max-width:663px) {
 	#right{
